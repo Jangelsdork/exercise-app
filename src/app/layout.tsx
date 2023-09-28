@@ -1,14 +1,10 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import { Dela_Gothic_One } from 'next/font/google'
+import React from 'react'
 
 const inter = Inter({ subsets: ['latin'] })
-const dela = Dela_Gothic_One({
-  subsets:['latin'],
-  weight: '400',
-  display: 'swap'
-})
+
 
 export const metadata: Metadata = {
   title: 'Create Next App',
