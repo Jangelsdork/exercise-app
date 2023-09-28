@@ -4,18 +4,24 @@ type Props = {
 
 export default function Exercises({apiRes}:Props) {
 
-    function Results(){
-        const eachResult = apiRes.map((line, index) => {
-            console.log(line.name)
+
+    const eachResult = apiRes.map((line, index) => {
+            console.log(line)
+            const regex = /<(?:"[^"]*"['"]*|'[^']*'['"]*|[^'">])+>/g;
+            const desc = line.description.replace(regex, "")
+
             return(
-                <div>{line.name}</div>
+                <ul className="ml-2">
+                    <li className="font-medium">{line.name}</li>
+                    <li className="font-thin m-2">{desc}</li>
+                </ul>
             )
     })
-    }
+
 
     return(
     <div>
-    <Results />
+  {eachResult}
     </div>
 )
 }
