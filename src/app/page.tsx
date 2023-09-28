@@ -19,7 +19,7 @@ export default function Home() {
 
   return (
     <main>
-      <div>
+      <div className='flex flex-wrap content-center w-[90vw] m-4'>
         <Exercises apiRes={apiRes}/> 
       </div>
     </main>
