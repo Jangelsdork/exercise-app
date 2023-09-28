@@ -1,3 +1,5 @@
+
+
 type Props = {
     apiRes: object[]; 
 }
@@ -12,7 +14,7 @@ export default function Exercises({apiRes}:Props) {
             const desc = line.description.replace(regex, "")
 
             return(
-                <ul className="m-2 border-[1px] p-2">
+                <ul className="m-2 border-[1px] border-slate-600 p-2">
                     <li className="font-medium">{line.name}</li>
                     <li className="font-thin m-2">{desc}</li>
                 </ul>

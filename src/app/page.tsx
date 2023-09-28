@@ -18,8 +18,8 @@ export default function Home() {
   },[])
 
   return (
-    <main>
-      <div className='flex flex-wrap content-center w-[90vw] m-4'>
+    <main className='flex justify-center'>
+      <div className='flex w-[90vw] m-4'>
         <Exercises apiRes={apiRes}/> 
       </div>
     </main>
