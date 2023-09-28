@@ -8,6 +8,7 @@ export default function Exercises({apiRes}:Props) {
     const eachResult = apiRes.map((line, index) => {
             console.log(line)
             const regex = /<(?:"[^"]*"['"]*|'[^']*'['"]*|[^'">])+>/g;
+            //scrubs html from the description
             const desc = line.description.replace(regex, "")
 
             return(
