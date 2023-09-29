@@ -1,7 +1,14 @@
+/* eslint-disable import/extensions */
+import { useState, SetStateAction, Dispatch, SyntheticEvent } from "react"
 import { dela } from "../fonts"
-import { useState } from "react"
 
-export default function SearchExercise() {
+type Props = {
+    setUrlMuscle: Dispatch<SetStateAction<number>>; 
+    setUrlEquipment: Dispatch<SetStateAction<number>>; 
+    fetchResults: () => void;
+}
+
+export default function SearchExercise({setUrlMuscle, setUrlEquipment, fetchResults}:Props) {
     const [muscleClicked, setMuscleClicked] = useState<boolean>(false)
     const [equipmentClicked, setEquipmentClicked] = useState<boolean>(false)
 
@@ -11,28 +18,41 @@ export default function SearchExercise() {
     function handleClickE(){
         setEquipmentClicked(!equipmentClicked)
     }
+
+    function handleMuscle(e:SyntheticEvent<HTMLDivElement>){
+        setUrlMuscle(Number(e.currentTarget.id))
+        fetchResults()
+        console.log("handled")
+    }
+    function handleEquipment(e:SyntheticEvent<HTMLDivElement>){
+        setUrlEquipment(Number(e.currentTarget.id))
+        fetchResults()
+    }
     
     function Muscles(){
         if(muscleClicked===true){
             return(
                 <div>
-                <div className="p-4 hover:bg-slate-500">Bicep</div>
-                <div className="p-4 hover:bg-slate-500">Tricep</div>
-                <div className="p-4 hover:bg-slate-500">Hamstring</div>
+                <div className="p-4 hover:bg-slate-500" id="2"onClick={handleMuscle}>Shoulders</div>
+                <div className="p-4 hover:bg-slate-500" id="1" onClick={handleMuscle}>Biceps</div>
+                <div className="p-4 hover:bg-slate-500" id="11" onClick={handleMuscle}>Hamstring</div>
                 </div>
             )
         }
+        return(<div></div>)
+        
     }
     function Equipment(){
         if(equipmentClicked===true){
             return(
                 <div>
-                <div className="p-4 hover:bg-slate-500">Dumbbells</div>
-                <div className="p-4 hover:bg-slate-500">Barbell</div>
-                <div className="p-4 hover:bg-slate-500">Bodyweight</div>
+                <div className="p-4 hover:bg-slate-500" id="3" onClick={handleEquipment}>Dumbbells</div>
+                <div className="p-4 hover:bg-slate-500" id="1" onClick={handleEquipment}>Barbell</div>
+                <div className="p-4 hover:bg-slate-500" id="7" onClick={handleEquipment}>Bodyweight</div>
                 </div>
             )
         }
+        return(<div></div>)
 
     }
 

@@ -1,14 +1,13 @@
 import { dela } from "../fonts";
 
 type Props = {
-    apiRes: object[]; 
+    apiRes: any; 
 }
 
 export default function Exercises({apiRes}:Props) {
 
 
-    const eachResult = apiRes.map((line, index) => {
-            console.log(line)
+    const eachResult = apiRes.map((line:any, index:number) => {
             const regex = /<(?:"[^"]*"['"]*|'[^']*'['"]*|[^'">])+>/g;
             // scrubs html from the description
             const desc = line.description.replace(regex, "")
