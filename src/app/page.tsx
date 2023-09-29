@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import Exercises from './components/Exercises'
+import SearchExercise from './components/SearchExercise'
 
 export default function Home() {
 
@@ -18,8 +19,9 @@ export default function Home() {
   },[])
 
   return (
-    <main className=" bg-gradient-to-r from-purple-500 to-pink-500 flex justify-center p-16">
-      <div className='flex bg-black'>
+    <main className=" bg-gradient-to-r from-violet-800 to-fuchsia-600 flex justify-center p-16">
+      <div className='flex flex-col bg-black'>
+        <SearchExercise />
         <Exercises apiRes={apiRes}/> 
       </div>
     </main>
