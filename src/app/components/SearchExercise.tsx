@@ -38,7 +38,7 @@ export default function SearchExercise() {
 
     // make a component to go in the placeholders, that contains all the muscles and equipment that can be selected 
     return (
-        <div id="menu-container" className={`grid grid-flow-col grid-rows-2 grid-cols-2 tracking-wider text-xl p-8 w-full font-d justify-stretch ${dela.className}`}>
+        <div id="menu-container" className={`grid grid-flow-row grid-cols-2 tracking-wider text-xl p-8 w-full font-d justify-stretch ${dela.className}`}>
             <div id="muscle" className="p-4 hover:bg-slate-500 cursor-pointer auto-rows-max auto-cols-max min-h-0 min-w-0" onClick={handleClickM}>Muscle</div>
 
             <div id="equipment" className=" p-4 hover:bg-slate-500 cursor-pointer min-h-0 min-w-0" onClick={handleClickE}>Equipment
