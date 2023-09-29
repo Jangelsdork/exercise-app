@@ -30,7 +30,7 @@ export default function Home() {
   }
 
   return (
-    <main className=" bg-gradient-to-r from-violet-800 to-fuchsia-600 flex justify-center min-h-screen p-16">
+    <main className=" bg-gradient-to-r from-violet-800 to-fuchsia-600 flex justify-center min-h-screen p-2 sm:p-16">
       <div className='flex flex-col bg-black'>
         <SearchExercise setUrlMuscle={setUrlMuscle} setUrlEquipment={setUrlEquipment} fetchResults={fetchResults} />
         <Exercises apiRes={apiRes}/> 
