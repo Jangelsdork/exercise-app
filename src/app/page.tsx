@@ -18,8 +18,8 @@ export default function Home() {
   },[])
 
   return (
-    <main className='flex justify-center'>
-      <div className='flex w-[90vw] m-4'>
+    <main className=" bg-gradient-to-r from-purple-500 to-pink-500 flex justify-center p-16">
+      <div className='flex bg-black'>
         <Exercises apiRes={apiRes}/> 
       </div>
     </main>
