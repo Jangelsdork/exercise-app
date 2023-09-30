@@ -1,9 +1,11 @@
 "use client"
 
-import { useEffect, useState, SetStateAction } from 'react'
+import { useState, SetStateAction, Link } from 'react'
 import Exercises from './components/Exercises'
 import SearchExercise from './components/SearchExercise'
 import Intro from './components/Intro'
+import { dela } from './fonts'
+
 
 export default function Home() {
 
@@ -31,12 +33,13 @@ export default function Home() {
   }
 
   return (
-    <main className=" bg-gradient-to-r from-violet-800 to-fuchsia-600 flex justify-center min-h-screen p-2 sm:p-16">
+    <main className=" bg-gradient-to-r from-violet-800 to-fuchsia-600 flex flex-col justify-center min-h-screen p-2 sm:p-16 ">
       <div className='flex flex-col bg-black'>
         <Intro />
         <SearchExercise setUrlMuscle={setUrlMuscle} setUrlEquipment={setUrlEquipment} fetchResults={fetchResults} />
         <Exercises apiRes={apiRes}/> 
-      </div>
+      </div >
+      <footer className={`flex tracking-wider text-xs sm:text-s justify-center  pt-20 ${dela.className}`}>Design by Jack Mangelsdorf</footer>
     </main>
   )
 }
